@@ -2,24 +2,26 @@ import os
 from portScanner import run_port_scanner
 
 print("""
-Bem-Vindo ao App de Reconhecimento de Alvo
+Bem-Vindo ao App de Reconhecimento de Alvo \n
 1.PortScan
 2.Wafw00f
 3.Escaneamento de Vulnerabilidades
 4.Enumeração de subdomínios
-5.Nikto
-Escolha uma ferramenta:
-""")
+5.Análise da infraestrutura (Nikto)
+6.Sair \n
+Escolha uma opção:""")
 
 opcao = None
 while opcao is None:
     try:
         opcao = int(input())
-        if opcao < 1 or opcao > 5:
-            print("A opção deve ser um número entre 1 e 5")
+        if opcao < 1 or opcao > 6:
+            print("Erro: A opção deve ser um número entre 1 e 6")
+            print("\nEscolha uma opção:")
             opcao = None
     except (TypeError, ValueError):
-        print("A opção deve ser um número entre 1 e 5")
+        print("Erro: A opção deve ser um número entre 1 e 6")
+        print("\nEscolha uma opção:")
 
 if opcao == 1:
     run_port_scanner()
@@ -43,3 +45,6 @@ elif opcao == 5:
     print("Digite o domínio que deseja verificar:")
     dominio = input()
     os.system(f"nikto -h {dominio}")
+
+elif opcao == 6:
+    print("Fechando aplicativo")
