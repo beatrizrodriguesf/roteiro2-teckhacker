@@ -1,6 +1,5 @@
 import os
-
-os.system("python --version")
+from portScanner import run_port_scanner
 
 print("""
 Bem-Vindo ao App de Reconhecimento de Alvo
@@ -8,6 +7,7 @@ Bem-Vindo ao App de Reconhecimento de Alvo
 2.Wafw00f
 3.Escaneamento de Vulnerabilidades
 4.Enumeração de subdomínios
+5.Nikto
 Escolha uma ferramenta:
 """)
 
@@ -15,16 +15,19 @@ opcao = None
 while opcao is None:
     try:
         opcao = int(input())
-        if opcao < 1 or opcao > 4:
-            print("A opção deve ser um número entre 1 e 4")
+        if opcao < 1 or opcao > 5:
+            print("A opção deve ser um número entre 1 e 5")
             opcao = None
     except (TypeError, ValueError):
-        print("A opção deve ser um número entre 1 e 4")
+        print("A opção deve ser um número entre 1 e 5")
 
-if opcao == 2:
+if opcao == 1:
+    run_port_scanner()
+
+elif opcao == 2:
     print("Digite a URL que deseja verificar:")
     url = input()
-    os.system(f"wafw00f {url}") # https:// ou ip
+    os.system(f"wafw00f {url}") # https://
 
 elif opcao == 3:
     print("Digite o domínio que deseja verificar:")
@@ -38,3 +41,5 @@ elif opcao == 4:
 
 elif opcao == 5:
     print("Digite o domínio que deseja verificar:")
+    dominio = input()
+    os.system(f"nikto -h {dominio}")
