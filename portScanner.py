@@ -73,7 +73,7 @@ def host_is_live(host_info, family):
 
 def run_port_scanner():
 
-    ip_rede = input("Digite o ip ou rede que deseja analisar: ").strip()
+    ip_rede = input("Digite o ip ou dominio que deseja analisar: ").strip()
 
     if len(ip_rede.split("/")) > 1:
         net = ipaddress.ip_network(ip_rede)
