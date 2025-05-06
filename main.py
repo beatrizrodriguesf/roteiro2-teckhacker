@@ -3,11 +3,11 @@ from portScanner import run_port_scanner
 
 print("""
 Bem-Vindo ao App de Reconhecimento de Alvo \n
-1.PortScan
-2.Wafw00f
+1.Escaneamento de Portas
+2.Verificação de Firewall
 3.Escaneamento de Vulnerabilidades
-4.Enumeração de subdomínios
-5.Análise da infraestrutura (Nikto)
+4.Enumeração de Subdomínios
+5.Análise da Infraestrutura
 6.Sair \n
 Escolha uma opção:""")
 
