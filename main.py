@@ -7,7 +7,7 @@ Bem-Vindo ao App de Reconhecimento de Alvo \n
 2.Verificação de Firewall
 3.Escaneamento de Vulnerabilidades
 4.Enumeração de Subdomínios
-5.Análise da Infraestrutura
+5.Vulnerabilidades da Infraestrutura Web
 6.Sair \n
 Escolha uma opção:""")
 
